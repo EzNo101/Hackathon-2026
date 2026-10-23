@@ -9,6 +9,7 @@ import { PhotoPanel } from './components/PhotoPanel'
 import { UploadPanel } from './components/UploadPanel'
 import { useEquilibrium } from './state/EquilibriumContext'
 import { usePhotoIndex } from './state/usePhotoIndex'
+import { usePredictionTimeline } from './state/usePredictionTimeline'
 import { usePrediction } from './state/usePrediction'
 
 function App() {
@@ -27,6 +28,16 @@ function App() {
   } = useEquilibrium()
   const photos = usePhotoIndex(selectedDischarge)
   const prediction = usePrediction()
+  const predictionTimeline = usePredictionTimeline(prediction.state.truth)
+  const predictionTimelineContext =
+    prediction.state.truth !== null && predictionTimeline !== null
+      ? {
+        series: predictionTimeline.series,
+        photos: predictionTimeline.photos,
+        cursorTime: prediction.state.truth.time,
+        onSelectTime: () => undefined,
+      }
+      : null
 
   const isPrediction = mode === 'prediction'
   const predictionResult = prediction.state.result
@@ -54,10 +65,10 @@ function App() {
 
         <ModeTabs />
 
-        <div className="header-status" role="status">
+        {/* <div className="header-status" role="status">
           <span className="status-dot" aria-hidden="true" />
           <span>Fáze 7 / 8</span>
-        </div>
+        </div> */}
       </header>
 
       <main className="app-main">
@@ -123,11 +134,10 @@ function App() {
                   value={
                     predictionResult ? (
                       <span
-                        className={`config-badge${
-                          predictionResult.values.is_limited
-                            ? ' is-limiter'
-                            : ' is-divertor'
-                        }`}
+                        className={`config-badge${predictionResult.values.is_limited
+                          ? ' is-limiter'
+                          : ' is-divertor'
+                          }`}
                       >
                         {predictionResult.values.is_limited ? 'Limiter' : 'Divertor'}
                       </span>
@@ -163,13 +173,12 @@ function App() {
                   label="Konfigurace"
                   value={
                     <span
-                      className={`config-badge${
-                        selectedSample
-                          ? selectedSample.is_limited
-                            ? ' is-limiter'
-                            : ' is-divertor'
-                          : ''
-                      }`}
+                      className={`config-badge${selectedSample
+                        ? selectedSample.is_limited
+                          ? ' is-limiter'
+                          : ' is-divertor'
+                        : ''
+                        }`}
                     >
                       {configuration}
                     </span>
@@ -200,21 +209,26 @@ function App() {
           >
             {isPrediction ? (
               predictionResult ? (
-                <>
+                <div className="prediction-result">
                   {detailTab === 'overview' ? (
                     <OverviewPanel
                       sample={predictionResult.values}
                       wall={wall}
-                      showTimeline={false}
+                      showTimeline={predictionTimelineContext !== null}
+                      timeline={predictionTimelineContext}
                     />
                   ) : (
-                    <DetailPanel sample={predictionResult.values} wall={wall} />
+                    <DetailPanel
+                      sample={predictionResult.values}
+                      wall={wall}
+                      timeline={predictionTimelineContext}
+                    />
                   )}
                   <ComparisonTable
                     prediction={predictionResult.values}
                     truth={prediction.state.truth}
                   />
-                </>
+                </div>
               ) : (
                 <PredictionIntro
                   status={prediction.state.status}
@@ -246,12 +260,12 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <span>COMPASS · Ústav fyziky plazmatu AV ČR</span>
+        {/* <span>COMPASS · Ústav fyziky plazmatu AV ČR</span>
         <span>
           {isPrediction
             ? 'Režim Predikce · backend FastAPI'
             : 'Režim Dataset · dočasný zdroj CSV'}
-        </span>
+        </span> */}
       </footer>
     </div>
   )

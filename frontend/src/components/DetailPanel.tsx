@@ -1,20 +1,12 @@
-import type { EquilibriumOutputs, EquilibriumSample, PhotoEntry, WallPoint } from '../types'
+import type { EquilibriumOutputs, TimelineContext, WallPoint } from '../types'
 import { DetailCharts } from './DetailCharts'
 import { DetailValuesTable } from './DetailValuesTable'
 import { FullShapePlot } from './FullShapePlot'
 
-/** Časové průběhy – jen v datasetu, kde existuje časová řada výboje. */
-export interface DetailTimeline {
-  series: EquilibriumSample[]
-  photos: PhotoEntry[] | null
-  cursorTime: number
-  onSelectTime: (time: number) => void
-}
-
 interface DetailPanelProps {
   sample: EquilibriumOutputs
   wall: WallPoint[]
-  timeline?: DetailTimeline | null
+  timeline?: TimelineContext | null
 }
 
 /**

@@ -52,6 +52,14 @@ export interface EquilibriumSample extends EquilibriumOutputs {
   discharge: number
 }
 
+/** Дані часового ряду для графіків у dataset- та prediction-режимі. */
+export interface TimelineContext {
+  series: EquilibriumSample[]
+  photos: PhotoEntry[] | null
+  cursorTime: number
+  onSelectTime: (time: number) => void
+}
+
 export interface DischargeMeta {
   id: number
   rowCount: number

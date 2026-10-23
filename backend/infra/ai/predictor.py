@@ -91,6 +91,9 @@ class PlasmaPredictor:
             for target in self.targets
         ]
 
+        values: dict[str, object] = dict(parameters)
+        values["is_limited"] = bool(is_limited)
+
         return {
             "regime": {
                 "is_limited": bool(is_limited),
@@ -98,6 +101,7 @@ class PlasmaPredictor:
                 "probability_limited": prob_limited,
                 "probability_diverted": 1.0 - prob_limited,
             },
+            "values": values,
             "parameters": parameters,
             "raw_parameters": raw,
             "main_17": self.main_17 or MAIN_17,

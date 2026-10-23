@@ -13,6 +13,7 @@ import {
 } from 'recharts'
 import { useEquilibrium } from '../state/EquilibriumContext'
 import { getLimiterSpans } from '../lib/timeseries'
+import type { EquilibriumOutputs, EquilibriumSample } from '../types'
 
 const CHART_HEIGHT = 240
 const GRID_COLOR = 'rgba(148, 163, 184, 0.12)'
@@ -27,9 +28,25 @@ const LIMITER_FILL = 'rgba(148, 163, 184, 0.18)'
  * Šedé pásy označují úseky s limiterem, svislá čára aktuální čas. Klik do
  * grafu nastaví čas na nejbližší vzorek.
  */
-export function TimeSeriesChart() {
-  const { series, selectedSample, selectedTime, setSelectedTime } =
-    useEquilibrium()
+interface TimeSeriesChartProps {
+  /** Pokud nejsou předané, použije se aktivní dataset z kontextu. */
+  series?: EquilibriumSample[]
+  sample?: EquilibriumOutputs | null
+  cursorTime?: number
+  onSelectTime?: (time: number) => void
+}
+
+export function TimeSeriesChart({
+  series: seriesProp,
+  sample,
+  cursorTime: cursorTimeProp,
+  onSelectTime,
+}: TimeSeriesChartProps = {}) {
+  const context = useEquilibrium()
+  const series = seriesProp ?? context.series
+  const selectedSample = sample !== undefined ? sample : context.selectedSample
+  const selectedTime = cursorTimeProp ?? context.selectedTime
+  const setSelectedTime = onSelectTime ?? context.setSelectedTime
 
   const data = useMemo(
     () =>
@@ -49,7 +66,7 @@ export function TimeSeriesChart() {
 
   const timeStart = series[0].time
   const timeEnd = series[series.length - 1].time
-  const cursorTime = selectedSample?.time ?? selectedTime
+  const cursorTime = cursorTimeProp ?? context.selectedSample?.time ?? selectedTime
   const currentNow =
     selectedSample?.plasma_current == null
       ? null
@@ -57,13 +74,6 @@ export function TimeSeriesChart() {
 
   return (
     <section className="time-chart" aria-label="Průběh proudu plazmatem">
-      <div className="time-chart-head">
-        <span className="control-label">Proud plazmatem</span>
-        <span className="control-hint">
-          šedě: limiter · klikni pro výběr času
-        </span>
-      </div>
-
       <div className="time-chart-body" style={{ height: CHART_HEIGHT }}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart

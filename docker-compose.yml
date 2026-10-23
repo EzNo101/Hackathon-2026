@@ -1,0 +1,31 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      PLASMA_DEVICE: cpu
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health')"
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost:8000/api/v1
+    ports:
+      - "5173:80"
+    volumes:
+      - ./data/uloha_1-photron/jpeg:/usr/share/nginx/html/photos:ro
+    depends_on:
+      backend:
+        condition: service_healthy

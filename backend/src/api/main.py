@@ -5,7 +5,13 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.api.core.config import API_V1_PREFIX, APP_TITLE, APP_VERSION, CORS_ORIGINS
+from src.api.core.config import (
+    API_V1_PREFIX,
+    APP_TITLE,
+    APP_VERSION,
+    CORS_ORIGIN_REGEX,
+    CORS_ORIGINS,
+)
 from src.api.v1.router import api_router
 from src.services.plasma_service import PlasmaService
 
@@ -28,8 +34,9 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
+    allow_origin_regex=CORS_ORIGIN_REGEX,
     allow_credentials=False,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
 app.include_router(api_router, prefix=API_V1_PREFIX)

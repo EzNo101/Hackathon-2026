@@ -894,6 +894,17 @@ a {
   min-width: 0;
 }
 
+/* Prediction result must stack overview/detail above comparison table.
+   Without this wrapper the flex row in .workspace-content squeezes the
+   overview to its min-content width and the table overlaps the R-Z plot. */
+.prediction-result {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
 .summary-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));

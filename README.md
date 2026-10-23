@@ -29,29 +29,16 @@ npm run dev
 
 ## Docker
 
+Run the whole stack:
+
 ```bash
-docker build -t compass-backend ./backend
-docker run --rm -p 8000:8000 compass-backend
+docker compose up --build -d
 ```
 
-`docker-compose.yml` at the repository root:
+- frontend: `http://localhost:5173`
+- backend: `http://localhost:8000`
+- docs: `http://localhost:8000/docs`
 
-```yaml
-services:
-  backend:
-    build: ./backend
-    ports:
-      - "8000:8000"
-    environment:
-      - PLASMA_DEVICE=cpu
-      - CORS_ORIGINS=*
-
-  frontend:
-    build: ./frontend
-    ports:
-      - "5173:80"
-    depends_on:
-      - backend
-```
-
+CORS is enabled for `http://localhost:5173` and `http://127.0.0.1:5173`.
+Override with `CORS_ORIGINS` (comma-separated) or `CORS_ORIGIN_REGEX`.
 The backend is stateless and needs no database for inference.
