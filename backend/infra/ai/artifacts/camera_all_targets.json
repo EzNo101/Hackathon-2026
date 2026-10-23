@@ -116,7 +116,19 @@
     "Z_strike_point_2",
     "R_limiter",
     "Z_limiter",
-    "plasma_current"
+    "plasma_current",
+    "R_top",
+    "Z_top",
+    "R_bottom",
+    "Z_bottom",
+    "R_outer",
+    "Z_outer",
+    "R_inner",
+    "Z_inner",
+    "squareness_upper_outer",
+    "squareness_upper_inner",
+    "squareness_lower_outer",
+    "squareness_lower_inner"
   ],
   "main_17": [
     "R_mag_axis",
@@ -138,7 +150,19 @@
     "Z_limiter"
   ],
   "extra_targets": [
-    "plasma_current"
+    "plasma_current",
+    "R_top",
+    "Z_top",
+    "R_bottom",
+    "Z_bottom",
+    "R_outer",
+    "Z_outer",
+    "R_inner",
+    "Z_inner",
+    "squareness_upper_outer",
+    "squareness_upper_inner",
+    "squareness_lower_outer",
+    "squareness_lower_inner"
   ],
   "units": {
     "R_mag_axis": "m",
@@ -386,6 +410,126 @@
       "R2": 0.7383887213160016,
       "unit": "A",
       "group": "plasma"
+    },
+    "R_top": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 300.0,
+      "MAE": 0.004235890458756887,
+      "RMSE": 0.006517962063583278,
+      "R2": 0.7844278833697444,
+      "unit": "m",
+      "group": "supplementary"
+    },
+    "Z_top": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 300.0,
+      "MAE": 0.0068195968773818215,
+      "RMSE": 0.010424078634895886,
+      "R2": 0.8311922459318557,
+      "unit": "m",
+      "group": "supplementary"
+    },
+    "R_bottom": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 100.0,
+      "MAE": 0.005797737827264916,
+      "RMSE": 0.008824592725668186,
+      "R2": 0.8810956821078233,
+      "unit": "m",
+      "group": "supplementary"
+    },
+    "Z_bottom": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 100.0,
+      "MAE": 0.009021073714986677,
+      "RMSE": 0.013742162851188854,
+      "R2": 0.9103804741829259,
+      "unit": "m",
+      "group": "supplementary"
+    },
+    "R_outer": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 300.0,
+      "MAE": 0.00433344302644297,
+      "RMSE": 0.006665992776498444,
+      "R2": 0.7462033939583115,
+      "unit": "m",
+      "group": "supplementary"
+    },
+    "Z_outer": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 300.0,
+      "MAE": 0.0030604502215797326,
+      "RMSE": 0.004754425843793083,
+      "R2": 0.8331644249639514,
+      "unit": "m",
+      "group": "supplementary"
+    },
+    "R_inner": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 100.0,
+      "MAE": 0.003262463911394459,
+      "RMSE": 0.005445478566540901,
+      "R2": 0.9064193411194117,
+      "unit": "m",
+      "group": "supplementary"
+    },
+    "Z_inner": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 300.0,
+      "MAE": 0.03249628625495715,
+      "RMSE": 0.04853818700994975,
+      "R2": 0.6424380488081287,
+      "unit": "m",
+      "group": "supplementary"
+    },
+    "squareness_upper_outer": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 300.0,
+      "MAE": 0.0024061946646155665,
+      "RMSE": 0.003595768224130724,
+      "R2": 0.7765417983610623,
+      "unit": "-",
+      "group": "supplementary"
+    },
+    "squareness_upper_inner": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 300.0,
+      "MAE": 0.04096604706013868,
+      "RMSE": 0.06128298224066056,
+      "R2": 0.7085919418513715,
+      "unit": "-",
+      "group": "supplementary"
+    },
+    "squareness_lower_outer": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 100.0,
+      "MAE": 0.015329778511363397,
+      "RMSE": 0.023281198664452277,
+      "R2": 0.9340872316430984,
+      "unit": "-",
+      "group": "supplementary"
+    },
+    "squareness_lower_inner": {
+      "n_train": 67590,
+      "n_test": 32444,
+      "alpha": 300.0,
+      "MAE": 0.05013318559312007,
+      "RMSE": 0.07246352500189597,
+      "R2": 0.3249727872549961,
+      "unit": "-",
+      "group": "supplementary"
     }
   },
   "classification": {
@@ -401,5 +545,5 @@
       "group": "regime"
     }
   },
-  "train_time_s": 9.314188375021331
+  "train_time_s": 15.211747332999948
 }

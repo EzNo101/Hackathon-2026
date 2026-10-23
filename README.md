@@ -11,13 +11,18 @@ No notebooks are needed to train, evaluate, or serve the model.
 - **17 main plasma parameters** (`main_17`): magnetic axis, elongation,
   triangularities, minor radius, geometric centre, X-point, strike points,
   limiter contact.
-- **Extras**: `plasma_current` and the regime flag `is_limited`.
+- **13 extra target columns** from the dataset: `plasma_current`, top/bottom/
+  outer/inner boundary points, four squareness values, and `is_limited` as the
+  regime prediction.
+- In total the API returns **all 31 Y columns** from `equil_data.csv`:
+  30 regression outputs + `is_limited`.
 - Per-row metadata: unit, group, `valid` flag, raw model value.
 - `latency_ms`, model name, encoder, device.
 
 Fields that are physically undefined in the predicted regime are returned as
-`null` in `parameters` (e.g. X-point/strike points for a limited plasma). The
-unmasked value stays available as `raw_value` in `parameter_table`.
+`null` in `parameters` (e.g. X-point/strike points for a limited plasma, or
+`R_limiter/Z_limiter` for a diverted plasma). The unmasked value stays available
+as `raw_value` in `parameter_table` and in `raw_parameters`.
 
 ## Data
 
@@ -34,9 +39,10 @@ export COMPASS_DATA_DIR=/path/to/data
 ## Train
 
 ```bash
+cd backend
 uv sync
 
-# 1. cache camera frames + metadata (only if infra/ai/artifacts/camera_cache_96.npy is missing)
+# 1. cache camera frames + metadata (only if backend/infra/ai/artifacts/camera_cache_96.npy is missing)
 uv run python -m infra.ai.prepare_camera
 
 # 2. attach equilibrium targets to each camera frame (discharge/time nearest match)
@@ -48,11 +54,11 @@ uv run python -m infra.ai.train_camera_all
 
 Outputs:
 
-- `infra/ai/artifacts/camera_all_targets.joblib` — models used by the API
-- `infra/ai/artifacts/camera_all_targets.json` — per-target MAE/RMSE/R², split, latency
-- `infra/ai/artifacts/camera_features_resnet18.npy` — cached 512-D image features
+- `backend/infra/ai/artifacts/camera_all_targets.joblib` — models used by the API
+- `backend/infra/ai/artifacts/camera_all_targets.json` — per-target MAE/RMSE/R², split, latency
+- `backend/infra/ai/artifacts/camera_features_resnet18.npy` — cached 512-D image features
 
-The small production bundle `infra/ai/artifacts/camera_all_targets.joblib`
+The small production bundle `backend/infra/ai/artifacts/camera_all_targets.joblib`
 (≈100 KB) is committed to git. Large training caches (`*.npy`, `*.pt`) stay
 git-ignored. On first run, torchvision downloads ResNet18 weights into
 `~/.cache/torch/hub/checkpoints/`; copy that file manually if the target machine
@@ -71,6 +77,7 @@ uv run python -m infra.ai.noise_robustness      # noisy/drifted magnetics + fusi
 ## Run the backend
 
 ```bash
+cd backend
 uv sync
 uv run python -m src.api          # robust: works from any directory
 # or
@@ -96,6 +103,23 @@ Example:
 curl -X POST \
   -F "file=@data/uloha_1-photron/jpeg/example.jpg" \
   http://localhost:8000/api/v1/predict
+```
+
+## Docker
+
+```bash
+docker build -t compass-backend ./backend
+docker run --rm -p 8000:8000 compass-backend
+```
+
+A `docker-compose.yml` at the repository root can use:
+
+```yaml
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
 ```
 
 Response shape:
@@ -165,6 +189,23 @@ frame from a test discharge is used in training.
 | plasma_current | 30.0 kA | 0.738 |
 | is_limited | acc 0.963 | AUC 0.988 |
 
+Extra targets (also returned by the API):
+
+| Target | MAE | R² |
+|---|---:|---:|
+| R_top | 4.24 mm | 0.784 |
+| Z_top | 6.82 mm | 0.831 |
+| R_bottom | 5.80 mm | 0.881 |
+| Z_bottom | 9.02 mm | 0.910 |
+| R_outer | 4.33 mm | 0.746 |
+| Z_outer | 3.06 mm | 0.833 |
+| R_inner | 3.26 mm | 0.906 |
+| Z_inner | 32.5 mm | 0.642 |
+| squareness_upper_outer | 0.0024 | 0.777 |
+| squareness_upper_inner | 0.0410 | 0.709 |
+| squareness_lower_outer | 0.0153 | 0.934 |
+| squareness_lower_inner | 0.0501 | 0.325 |
+
 Interpretation:
 
 - Image-only is good for **shape** (elongation/triangularity/a R² ≈ 0.88–0.95).
@@ -184,7 +225,7 @@ than either modality under corrupted magnetic measurements.
 ## Source layout
 
 ```
-infra/ai/                    AI / ML layer
+backend/infra/ai/            AI / ML layer
   config.py                  paths and feature/target constants
   targets.py                 main 17 targets, units, groups, labels
   predictor.py               single-image inference wrapper
@@ -200,7 +241,7 @@ infra/ai/                    AI / ML layer
   ablate_image.py            crop/grayscale/learning-curve/jitter analysis
   noise_robustness.py        noisy/drifted magnetics + multimodal rescue
 
-src/api/                     HTTP layer
+backend/src/api/             HTTP layer
   main.py                    FastAPI app factory + lifespan
   core/config.py             API prefix, CORS, app metadata
   deps.py                    dependency providers
@@ -208,7 +249,7 @@ src/api/                     HTTP layer
   v1/endpoints/              health.py, model.py, predict.py
   v1/schemas.py              Pydantic response models
 
-src/services/                application layer
+backend/src/services/        application layer
   plasma_service.py          image bytes -> model -> response payload
 
 ```

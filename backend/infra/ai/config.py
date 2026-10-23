@@ -5,7 +5,10 @@ REPO_ROOT: Path = Path(__file__).resolve().parents[2]
 ARTIFACTS_DIR: Path = Path(__file__).resolve().parent / "artifacts"
 ARTIFACTS_DIR.mkdir(exist_ok=True)
 
-DATA_DIR: Path = Path(os.environ.get("COMPASS_DATA_DIR", str(REPO_ROOT / "data")))
+_default_data_dir = REPO_ROOT / "data"
+if not _default_data_dir.exists() and (REPO_ROOT.parent / "data").exists():
+    _default_data_dir = REPO_ROOT.parent / "data"
+DATA_DIR: Path = Path(os.environ.get("COMPASS_DATA_DIR", str(_default_data_dir)))
 
 
 def _find(*candidates: Path) -> Path:

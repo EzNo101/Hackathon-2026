@@ -1,5 +1,7 @@
 .venv/
 __pycache__/
+.ruff_cache/
+.pytest_cache/
 *.pyc
 .ipynb_checkpoints/
 .DS_Store
@@ -11,11 +13,11 @@ data/
 *.jpg
 
 # binary artifacts; the small production model is committed
-infra/ai/artifacts/*.joblib
-!infra/ai/artifacts/camera_all_targets.joblib
+backend/infra/ai/artifacts/*.joblib
+!backend/infra/ai/artifacts/camera_all_targets.joblib
 
 # notebooks
 notebooks/*.ipynb
 # large binary artifacts
-infra/ai/artifacts/*.npy
-infra/ai/artifacts/*.pt
+backend/infra/ai/artifacts/*.npy
+backend/infra/ai/artifacts/*.pt

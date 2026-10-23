@@ -7,21 +7,15 @@ from typing import Any
 
 import pandas as pd
 
-from .config import (
-    ARTIFACTS_DIR,
-    CLASSIFICATION_TARGET,
-    FEATURES,
-    LIMITER_TARGETS,
-    TARGETS,
-    XPOINT_TARGETS,
-)
+from .config import ARTIFACTS_DIR, CLASSIFICATION_TARGET, FEATURES
 from .data import canonicalize_strike_points, load_equilibrium
 from .prepare_camera import INDEX_PATH
+from .targets import EXTRA_TARGETS, MAIN_17
 
 MATCH_PATH: Path = ARTIFACTS_DIR / "camera_targets.csv"
 MATCH_META_PATH: Path = ARTIFACTS_DIR / "camera_targets_meta.json"
 
-TARGET_COLUMNS: list[str] = TARGETS + XPOINT_TARGETS + LIMITER_TARGETS + [CLASSIFICATION_TARGET]
+TARGET_COLUMNS: list[str] = MAIN_17 + EXTRA_TARGETS + [CLASSIFICATION_TARGET]
 
 
 def match_frames(
