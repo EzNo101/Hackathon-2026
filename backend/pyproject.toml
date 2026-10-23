@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hackathon-2026"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.162.0",
+    "joblib>=1.6.0",
+    "matplotlib>=3.11.2",
+    "pandas>=3.1.0",
+    "pillow>=13.0.0",
+    "python-multipart>=0.0.32",
+    "scikit-learn>=1.9.1",
+    "torch>=2.14.1",
+    "torchvision>=0.29.1",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.40.2",
+    "ipykernel>=7.4.0",
+    "nbconvert>=7.17.2",
+    "nbformat>=5.11.1",
+    "pandas-stubs>=3.0.5.260914",
+    "python-pptx>=1.0.2",
+    "ruff>=0.17.2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src", "infra"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+torchvision = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
