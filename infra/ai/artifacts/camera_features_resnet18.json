@@ -1,0 +1,7 @@
+{
+  "encoder": "resnet18-imagenet1k_v1",
+  "resize": 128,
+  "n_frames": 116137,
+  "dim": 512,
+  "seconds": 73.42154870799277
+}

@@ -1,0 +1,24 @@
+{
+  "include": [
+    "src",
+    "infra"
+  ],
+  "exclude": [
+    ".venv",
+    "data",
+    "infra/ai/artifacts",
+    "notebooks"
+  ],
+  "pythonVersion": "3.13",
+  "typeCheckingMode": "basic",
+  "reportMissingTypeStubs": "none",
+  "reportUnknownMemberType": "none",
+  "reportUnknownArgumentType": "none",
+  "reportUnknownVariableType": "none",
+  "reportUnknownParameterType": "none",
+  "reportMissingParameterType": "none",
+  "reportAny": "none",
+  "reportExplicitAny": "none",
+  "reportUnusedImport": "warning",
+  "reportUnusedVariable": "warning"
+}
