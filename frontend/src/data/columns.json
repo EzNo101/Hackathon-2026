@@ -1,0 +1,37 @@
+{
+  "main": [
+    "is_limited",
+    "plasma_current",
+    "R_mag_axis",
+    "Z_mag_axis",
+    "elongation",
+    "triangularity",
+    "triangularity_upper",
+    "triangularity_lower",
+    "R_x_point",
+    "Z_x_point",
+    "R_strike_point_1",
+    "Z_strike_point_1",
+    "R_strike_point_2",
+    "Z_strike_point_2",
+    "R_limiter",
+    "Z_limiter"
+  ],
+  "supplementary": [
+    "a",
+    "R_geom",
+    "Z_geom",
+    "R_top",
+    "Z_top",
+    "R_bottom",
+    "Z_bottom",
+    "R_outer",
+    "Z_outer",
+    "R_inner",
+    "Z_inner",
+    "squareness_upper_outer",
+    "squareness_upper_inner",
+    "squareness_lower_outer",
+    "squareness_lower_inner"
+  ]
+}

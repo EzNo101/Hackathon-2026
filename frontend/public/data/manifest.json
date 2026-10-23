@@ -1,0 +1,1088 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-23T20:42:38.798Z",
+  "source": "equil_data.csv",
+  "rowCount": 42972,
+  "columns": {
+    "main": [
+      "is_limited",
+      "plasma_current",
+      "R_mag_axis",
+      "Z_mag_axis",
+      "elongation",
+      "triangularity",
+      "triangularity_upper",
+      "triangularity_lower",
+      "R_x_point",
+      "Z_x_point",
+      "R_strike_point_1",
+      "Z_strike_point_1",
+      "R_strike_point_2",
+      "Z_strike_point_2",
+      "R_limiter",
+      "Z_limiter"
+    ],
+    "supplementary": [
+      "a",
+      "R_geom",
+      "Z_geom",
+      "R_top",
+      "Z_top",
+      "R_bottom",
+      "Z_bottom",
+      "R_outer",
+      "Z_outer",
+      "R_inner",
+      "Z_inner",
+      "squareness_upper_outer",
+      "squareness_upper_inner",
+      "squareness_lower_outer",
+      "squareness_lower_inner"
+    ]
+  },
+  "discharges": [
+    {
+      "id": 0,
+      "rowCount": 333,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 138
+    },
+    {
+      "id": 1,
+      "rowCount": 225,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 89
+    },
+    {
+      "id": 2,
+      "rowCount": 125,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 90
+    },
+    {
+      "id": 3,
+      "rowCount": 136,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 107
+    },
+    {
+      "id": 4,
+      "rowCount": 122,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 90
+    },
+    {
+      "id": 5,
+      "rowCount": 117,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 90
+    },
+    {
+      "id": 6,
+      "rowCount": 17,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 17
+    },
+    {
+      "id": 7,
+      "rowCount": 37,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 37
+    },
+    {
+      "id": 8,
+      "rowCount": 136,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 108
+    },
+    {
+      "id": 9,
+      "rowCount": 197,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 88
+    },
+    {
+      "id": 10,
+      "rowCount": 209,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 107
+    },
+    {
+      "id": 11,
+      "rowCount": 217,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 99
+    },
+    {
+      "id": 12,
+      "rowCount": 164,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 89
+    },
+    {
+      "id": 13,
+      "rowCount": 192,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 89
+    },
+    {
+      "id": 14,
+      "rowCount": 293,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 156
+    },
+    {
+      "id": 15,
+      "rowCount": 439,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 156
+    },
+    {
+      "id": 16,
+      "rowCount": 344,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 148
+    },
+    {
+      "id": 17,
+      "rowCount": 344,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 144
+    },
+    {
+      "id": 18,
+      "rowCount": 344,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 146
+    },
+    {
+      "id": 19,
+      "rowCount": 329,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 132
+    },
+    {
+      "id": 20,
+      "rowCount": 175,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 94
+    },
+    {
+      "id": 21,
+      "rowCount": 252,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 95
+    },
+    {
+      "id": 22,
+      "rowCount": 256,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 93
+    },
+    {
+      "id": 23,
+      "rowCount": 262,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 95
+    },
+    {
+      "id": 24,
+      "rowCount": 267,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 93
+    },
+    {
+      "id": 25,
+      "rowCount": 221,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 94
+    },
+    {
+      "id": 26,
+      "rowCount": 343,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 176
+    },
+    {
+      "id": 27,
+      "rowCount": 265,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 265
+    },
+    {
+      "id": 28,
+      "rowCount": 248,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 248
+    },
+    {
+      "id": 29,
+      "rowCount": 241,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 241
+    },
+    {
+      "id": 30,
+      "rowCount": 259,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 259
+    },
+    {
+      "id": 31,
+      "rowCount": 240,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 240
+    },
+    {
+      "id": 32,
+      "rowCount": 341,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 155
+    },
+    {
+      "id": 33,
+      "rowCount": 316,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 316
+    },
+    {
+      "id": 34,
+      "rowCount": 227,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 89
+    },
+    {
+      "id": 35,
+      "rowCount": 216,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 91
+    },
+    {
+      "id": 36,
+      "rowCount": 308,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 308
+    },
+    {
+      "id": 37,
+      "rowCount": 165,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 94
+    },
+    {
+      "id": 38,
+      "rowCount": 185,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 95
+    },
+    {
+      "id": 39,
+      "rowCount": 181,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 97
+    },
+    {
+      "id": 40,
+      "rowCount": 326,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 140
+    },
+    {
+      "id": 41,
+      "rowCount": 333,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 142
+    },
+    {
+      "id": 42,
+      "rowCount": 333,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 139
+    },
+    {
+      "id": 43,
+      "rowCount": 291,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 93
+    },
+    {
+      "id": 44,
+      "rowCount": 328,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 140
+    },
+    {
+      "id": 45,
+      "rowCount": 290,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 93
+    },
+    {
+      "id": 46,
+      "rowCount": 297,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 93
+    },
+    {
+      "id": 47,
+      "rowCount": 317,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 137
+    },
+    {
+      "id": 48,
+      "rowCount": 336,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 121
+    },
+    {
+      "id": 49,
+      "rowCount": 332,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 142
+    },
+    {
+      "id": 50,
+      "rowCount": 332,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 140
+    },
+    {
+      "id": 51,
+      "rowCount": 289,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 94
+    },
+    {
+      "id": 52,
+      "rowCount": 287,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 106
+    },
+    {
+      "id": 53,
+      "rowCount": 312,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 139
+    },
+    {
+      "id": 54,
+      "rowCount": 221,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 81
+    },
+    {
+      "id": 55,
+      "rowCount": 322,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 130
+    },
+    {
+      "id": 56,
+      "rowCount": 331,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 126
+    },
+    {
+      "id": 57,
+      "rowCount": 315,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 129
+    },
+    {
+      "id": 58,
+      "rowCount": 279,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 92
+    },
+    {
+      "id": 59,
+      "rowCount": 326,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 136
+    },
+    {
+      "id": 60,
+      "rowCount": 238,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 73
+    },
+    {
+      "id": 61,
+      "rowCount": 177,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 75
+    },
+    {
+      "id": 62,
+      "rowCount": 348,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 170
+    },
+    {
+      "id": 63,
+      "rowCount": 217,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 107
+    },
+    {
+      "id": 64,
+      "rowCount": 356,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 162
+    },
+    {
+      "id": 65,
+      "rowCount": 355,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 167
+    },
+    {
+      "id": 66,
+      "rowCount": 238,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 73
+    },
+    {
+      "id": 67,
+      "rowCount": 356,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 167
+    },
+    {
+      "id": 68,
+      "rowCount": 210,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 75
+    },
+    {
+      "id": 69,
+      "rowCount": 241,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 75
+    },
+    {
+      "id": 70,
+      "rowCount": 370,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 370
+    },
+    {
+      "id": 71,
+      "rowCount": 348,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 157
+    },
+    {
+      "id": 72,
+      "rowCount": 258,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 93
+    },
+    {
+      "id": 73,
+      "rowCount": 291,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 101
+    },
+    {
+      "id": 74,
+      "rowCount": 260,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 74
+    },
+    {
+      "id": 75,
+      "rowCount": 212,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 74
+    },
+    {
+      "id": 76,
+      "rowCount": 354,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 161
+    },
+    {
+      "id": 77,
+      "rowCount": 215,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 75
+    },
+    {
+      "id": 78,
+      "rowCount": 212,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 74
+    },
+    {
+      "id": 79,
+      "rowCount": 227,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 74
+    },
+    {
+      "id": 80,
+      "rowCount": 209,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 75
+    },
+    {
+      "id": 81,
+      "rowCount": 324,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 158
+    },
+    {
+      "id": 82,
+      "rowCount": 335,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 155
+    },
+    {
+      "id": 83,
+      "rowCount": 230,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 76
+    },
+    {
+      "id": 84,
+      "rowCount": 228,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 78
+    },
+    {
+      "id": 85,
+      "rowCount": 216,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 78
+    },
+    {
+      "id": 86,
+      "rowCount": 206,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 77
+    },
+    {
+      "id": 87,
+      "rowCount": 301,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 141
+    },
+    {
+      "id": 88,
+      "rowCount": 185,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 77
+    },
+    {
+      "id": 89,
+      "rowCount": 199,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 75
+    },
+    {
+      "id": 90,
+      "rowCount": 163,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 76
+    },
+    {
+      "id": 91,
+      "rowCount": 203,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 76
+    },
+    {
+      "id": 92,
+      "rowCount": 323,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 190
+    },
+    {
+      "id": 93,
+      "rowCount": 330,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 154
+    },
+    {
+      "id": 94,
+      "rowCount": 439,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 97
+    },
+    {
+      "id": 95,
+      "rowCount": 347,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 175
+    },
+    {
+      "id": 96,
+      "rowCount": 203,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 97
+    },
+    {
+      "id": 97,
+      "rowCount": 389,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 174
+    },
+    {
+      "id": 98,
+      "rowCount": 163,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 97
+    },
+    {
+      "id": 99,
+      "rowCount": 177,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 96
+    },
+    {
+      "id": 100,
+      "rowCount": 330,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 175
+    },
+    {
+      "id": 101,
+      "rowCount": 172,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 99
+    },
+    {
+      "id": 102,
+      "rowCount": 329,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 178
+    },
+    {
+      "id": 103,
+      "rowCount": 170,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 98
+    },
+    {
+      "id": 104,
+      "rowCount": 332,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 134
+    },
+    {
+      "id": 105,
+      "rowCount": 338,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 173
+    },
+    {
+      "id": 106,
+      "rowCount": 235,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 82
+    },
+    {
+      "id": 107,
+      "rowCount": 164,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 98
+    },
+    {
+      "id": 108,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 134
+    },
+    {
+      "id": 109,
+      "rowCount": 423,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 173
+    },
+    {
+      "id": 110,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 137
+    },
+    {
+      "id": 111,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 136
+    },
+    {
+      "id": 112,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 130
+    },
+    {
+      "id": 113,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 137
+    },
+    {
+      "id": 114,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 122
+    },
+    {
+      "id": 115,
+      "rowCount": 333,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 87
+    },
+    {
+      "id": 116,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 131
+    },
+    {
+      "id": 117,
+      "rowCount": 223,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 85
+    },
+    {
+      "id": 118,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 148
+    },
+    {
+      "id": 119,
+      "rowCount": 184,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 88
+    },
+    {
+      "id": 120,
+      "rowCount": 426,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 164
+    },
+    {
+      "id": 121,
+      "rowCount": 429,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 166
+    },
+    {
+      "id": 122,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 125
+    },
+    {
+      "id": 123,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 139
+    },
+    {
+      "id": 124,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 133
+    },
+    {
+      "id": 125,
+      "rowCount": 439,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 162
+    },
+    {
+      "id": 126,
+      "rowCount": 200,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 87
+    },
+    {
+      "id": 127,
+      "rowCount": 131,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 131
+    },
+    {
+      "id": 128,
+      "rowCount": 350,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 162
+    },
+    {
+      "id": 129,
+      "rowCount": 259,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 66
+    },
+    {
+      "id": 130,
+      "rowCount": 282,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 142
+    },
+    {
+      "id": 131,
+      "rowCount": 437,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 176
+    },
+    {
+      "id": 132,
+      "rowCount": 393,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 168
+    },
+    {
+      "id": 133,
+      "rowCount": 433,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 167
+    },
+    {
+      "id": 134,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 159
+    },
+    {
+      "id": 135,
+      "rowCount": 229,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 91
+    },
+    {
+      "id": 136,
+      "rowCount": 405,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 169
+    },
+    {
+      "id": 137,
+      "rowCount": 314,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 137
+    },
+    {
+      "id": 138,
+      "rowCount": 423,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 173
+    },
+    {
+      "id": 139,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 135
+    },
+    {
+      "id": 140,
+      "rowCount": 438,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 143
+    },
+    {
+      "id": 141,
+      "rowCount": 301,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 149
+    },
+    {
+      "id": 142,
+      "rowCount": 431,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 171
+    },
+    {
+      "id": 143,
+      "rowCount": 412,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 172
+    },
+    {
+      "id": 144,
+      "rowCount": 365,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 156
+    },
+    {
+      "id": 145,
+      "rowCount": 293,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 142
+    },
+    {
+      "id": 146,
+      "rowCount": 175,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 90
+    },
+    {
+      "id": 147,
+      "rowCount": 298,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 158
+    },
+    {
+      "id": 148,
+      "rowCount": 44,
+      "timeStart": 0,
+      "timeEnd": 1,
+      "limiterRowCount": 44
+    }
+  ]
+}

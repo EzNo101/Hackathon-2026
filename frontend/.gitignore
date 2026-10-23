@@ -1,0 +1,21 @@
+# Závislosti
+node_modules/
+
+# Produkční build
+dist/
+dist-ssr/
+
+# Lokální konfigurace a proměnné prostředí
+*.local
+.env
+.env.*
+!.env.example
+
+# Systémové soubory
+.DS_Store
+
+# Logy
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
