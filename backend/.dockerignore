@@ -1,0 +1,18 @@
+.venv
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+data
+notebooks
+.pytest_cache
+.ruff_cache
+.vscode
+
+# large training caches and experiment outputs
+infra/ai/artifacts/*.npy
+infra/ai/artifacts/*.pt
+infra/ai/artifacts/*.csv
+infra/ai/artifacts/*.joblib
+!infra/ai/artifacts/camera_all_targets.joblib
