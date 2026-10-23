@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+.ruff_cache/
+.pytest_cache/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# data is not committed (provided by the organizers)
+data/
+*.csv
+*.zip
+*.jpg
+
+# binary artifacts; the small production model is committed
+backend/infra/ai/artifacts/*.joblib
+!backend/infra/ai/artifacts/camera_all_targets.joblib
+
+# notebooks
+notebooks/*.ipynb
+# large binary artifacts
+backend/infra/ai/artifacts/*.npy
+backend/infra/ai/artifacts/*.pt
