@@ -211,7 +211,6 @@ src/api/                     HTTP layer
 src/services/                application layer
   plasma_service.py          image bytes -> model -> response payload
 
-presentation/                slides and figure builders
 ```
 
 No database is required for inference: the service is stateless and loads the
