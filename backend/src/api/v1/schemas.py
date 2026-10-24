@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Any
+
 from pydantic import BaseModel
 
 
@@ -30,6 +32,7 @@ class PredictionResponse(BaseModel):
     filename: str | None = None
     image_size: list[int] | None = None
     regime: Regime
+    values: dict[str, Any]
     parameters: dict[str, float | None]
     raw_parameters: dict[str, float | None]
     main_17: list[str]
