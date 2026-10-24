@@ -95,7 +95,7 @@ export function PhotoPanel() {
   if (!photo || !selectedSample) {
     return (
       <section className="photo-panel" aria-label="Fotka z kamery">
-        <span className="control-hint">Pro tento výboj nejsou k dispozici žádné fotky.</span>
+        j   <span className="control-hint">Pro tento výboj nejsou k dispozici žádné fotky.</span>
       </section>
     )
   }
