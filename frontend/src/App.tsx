@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import { ComparisonTable } from './components/ComparisonTable'
 import { DatasetControls } from './components/DatasetControls'
 import { DetailPanel } from './components/DetailPanel'
 import { DetailTabs } from './components/DetailTabs'
@@ -8,7 +7,6 @@ import { OverviewPanel } from './components/OverviewPanel'
 import { PhotoPanel } from './components/PhotoPanel'
 import { UploadPanel } from './components/UploadPanel'
 import { useEquilibrium } from './state/EquilibriumContext'
-import { usePhotoIndex } from './state/usePhotoIndex'
 import { usePredictionTimeline } from './state/usePredictionTimeline'
 import { usePrediction } from './state/usePrediction'
 
@@ -20,13 +18,10 @@ function App() {
     discharges,
     selectedDischarge,
     selectedSample,
-    series,
-    setSelectedTime,
     wall,
     isLoading,
     error,
   } = useEquilibrium()
-  const photos = usePhotoIndex(selectedDischarge)
   const prediction = usePrediction()
   const predictionTimeline = usePredictionTimeline(prediction.state.truth)
   const predictionTimelineContext =
@@ -59,7 +54,7 @@ function App() {
           </div>
           <div>
             <p className="eyebrow">COMPASS · tokamak</p>
-            <h1>Equilibrium dashboard</h1>
+            <h1>Dashboard</h1>
           </div>
         </div>
 
@@ -87,7 +82,7 @@ function App() {
               </h2>
               <p className="panel-description">
                 {isPrediction
-                  ? 'Nahraj fotku z kamery. Backend vrátí 31 parametrů tvaru plazmatu a jsou zobrazeny stejně jako v datasetu. Je-li fotka v datasetu, zobrazí se i skutečné hodnoty pro srovnání.'
+                  ? 'Nahraj fotku z kamery. Backend vrátí 31 parametrů tvaru plazmatu a zobrazí je v přehledu i detailu.'
                   : 'Procházení naměřených dat: časový průběh výboje a parametry tvaru plazmatu pro zvolený okamžik.'}
               </p>
             </div>
@@ -218,16 +213,8 @@ function App() {
                       timeline={predictionTimelineContext}
                     />
                   ) : (
-                    <DetailPanel
-                      sample={predictionResult.values}
-                      wall={wall}
-                      timeline={predictionTimelineContext}
-                    />
+                    <DetailPanel sample={predictionResult.values} wall={wall} />
                   )}
-                  <ComparisonTable
-                    prediction={predictionResult.values}
-                    truth={prediction.state.truth}
-                  />
                 </div>
               ) : (
                 <PredictionIntro
@@ -244,16 +231,7 @@ function App() {
             ) : detailTab === 'overview' ? (
               <OverviewPanel sample={selectedSample} wall={wall} />
             ) : (
-              <DetailPanel
-                sample={selectedSample}
-                wall={wall}
-                timeline={{
-                  series,
-                  photos,
-                  cursorTime: selectedSample.time,
-                  onSelectTime: setSelectedTime,
-                }}
-              />
+              <DetailPanel sample={selectedSample} wall={wall} />
             )}
           </div>
         </section>
@@ -312,7 +290,7 @@ function PredictionIntro({
         <p>
           {hasError
             ? 'Predikce neproběhla. Chybu najdeš výše, po opravě můžeš fotku nahrát znovu.'
-            : 'Po nahrání se zobrazí 31 parametrů tvaru plazmatu, přehled, detail a srovnání, pokud je fotka v datasetu.'}
+            : 'Po nahrání se zobrazí 31 parametrů tvaru plazmatu, přehled a detail.'}
         </p>
       </div>
     </div>
